@@ -1,6 +1,6 @@
 Package.describe({
   name: 'ivansglazunov:links',
-  version: '0.1.0',
+  version: '0.1.1',
   summary: 'Implementation of references independent of DBRef interpretation.',
   git: 'https://github.com/ivansglazunov/meteor-links',
   documentation: 'README.md'

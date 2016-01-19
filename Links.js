@@ -16,12 +16,22 @@ Link = function(link) {
 
 // (link: String) => [String]|undefined
 Link.parse = function(link) {
-  var collection = Link.collection(link);
   if (typeof(link) != 'string') throw new Meteor.Error('Link must be a string!', 'typeof(link) != "string"');
   var link = link.split('|');
   if (link.length < 2 || link.length > 3) throw new Meteor.Error('Invalid link.', 'link.length < 2 || link.length > 3');
   if (!link[0].length || !link[1].length || (link.length == 3 && !link[2].length)) throw new Meteor.Error('Invalid link.', 'Too short strings.');
+  if (!Mongo.Collection.get(link[1])) throw new Meteor.Error('Collection '+link[1]+' not found.');
   return link;
+};
+
+// (link: String) => Boolean
+Link.validate = function(link) {
+  try {
+    Link.parse(link);
+  } catch(error) {
+    return false;
+  }
+  return true;
 };
 
 // (link: String) => Collection|undefined
