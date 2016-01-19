@@ -1,7 +1,7 @@
 Package.describe({
   name: 'ivansglazunov:links',
-  version: '0.0.2',
-  summary: 'Typed links with DBRef.',
+  version: '0.1.0',
+  summary: 'Implementation of references independent of DBRef interpretation.',
   git: 'https://github.com/ivansglazunov/meteor-links',
   documentation: 'README.md'
 });
@@ -9,9 +9,9 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.2.1');
   api.use('mongo');
-  api.use('aldeed:simple-schema@1.5.1');
-  api.use('ivansglazunov:dbrefs@0.0.4');
+  api.use('ivansglazunov:dbrefs@0.1.4');
+  api.use('dburles:mongo-collection-instances@0.3.4');
   api.use('ecmascript');
-  api.addFiles('links.js');
-  api.export('LinksSimpleSchema');
+  api.addFiles('Links.js');
+  api.export('Link');
 });
