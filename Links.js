@@ -11,7 +11,7 @@ Meteor.Collection.prototype.attachLinks = function() {
 Link = function(link) {
   var link = Link.parse(link);
   var collection = Mongo.Collection.get(link[1]);
-  collection.findOne({ _id: link[0] });
+  return collection.findOne({ _id: link[0] });
 }
 
 // (link: String) => [String]|undefined

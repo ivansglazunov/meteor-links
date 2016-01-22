@@ -8,14 +8,14 @@ DBRef in Meteor has bad interpretation. The client and the server query syntax i
 
 If your `_id`, the names of the collections are always string and you always know what field will be stored link - this package is for you.
 
-### Universal links string syntax
+## Universal links string syntax
 
 What is going to link?
 ```js
 var link = document._id+'|'+collection._name;
 ```
 
-### Lovely methods
+## Lovely methods
 
 ##### Mongo.Collection.prototype.attachLinks
 
@@ -112,3 +112,11 @@ Link.validate("mHnuNthscrJJm64GY"); false
 Link.validate("mHnuNthscrJJm64GY|documents|"); false
 Link.validate("mHnuNthscrJJm64GY||"); false
 ```
+
+## Versions
+
+##### 0.1.3
+* dependence `dburles:collection-helpers@1.0.4`
+
+##### 0.1.2
+* Fix method `Link`
